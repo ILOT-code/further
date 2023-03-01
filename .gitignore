@@ -1,3 +1,6 @@
 *.exe
 *.o
 bin/
+in.txt
+out.txt
+test.cpp
