@@ -1,3 +1,4 @@
+// NWERC 2006 100722C
 #include <algorithm>
 #include <cmath>
 #include <cstdio>
