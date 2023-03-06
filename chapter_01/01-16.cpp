@@ -13,7 +13,7 @@ bool test(int p) {
         if (i % 2 == 1) {
             right[i] = min(y - right[i - 1], a[i]);
             left[i] = a[i] - right[i];
-            if (left[i] + left[i - 1] > x) return false;
+            if (left[i] + left[i - 1] > x) return false; //实际上由于l的限制，不会发生
         } else {
             left[i] = min(x - left[i - 1], a[i]);
             right[i] = a[i] - left[i];
