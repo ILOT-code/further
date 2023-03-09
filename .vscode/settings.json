@@ -1,7 +1,8 @@
 {
     "files.associations": {
         "algorithm": "cpp",
-        "cstdio": "cpp"
+        "cstdio": "cpp",
+        "cstring": "cpp"
     },
     //"C_Cpp.errorSquiggles": "disabled"
 }
