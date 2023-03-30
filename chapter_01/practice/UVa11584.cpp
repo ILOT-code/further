@@ -12,7 +12,7 @@ int main() {
     while (T--) {
         scanf("%s", &s);
         int n = strlen(s);
-        for (int len = 1; len < n; ++len)
+        for (int len = 1; len <= n; ++len)
             for (int i = 0; i < n + 1 - len; ++i) {
                 int j = i + len - 1;
                 if (len == 1) is[i][j] = true;

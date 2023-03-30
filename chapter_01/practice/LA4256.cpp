@@ -5,7 +5,7 @@
 using namespace std;
 
 const int INF = 0x3f3f3f3f;
-const int maxn = 100 + 5;
+const int maxn = 300 + 5;
 int T, n, m, len, p[maxn], d[maxn][maxn];
 bool link[maxn][maxn];
 
