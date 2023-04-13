@@ -63,7 +63,7 @@ void addedge(const string& s) {
 
 typedef pair<string, int> PSI;
 bool vis[maxs];
-void dirjstra(int l) {
+void Dijkstra(int l) {
     memset(vis, 0, sizeof(vis));
     priority_queue<PSI, vector<PSI>, greater<PSI>> que;
     for (int i = 0; i < ns; ++i)
@@ -115,7 +115,7 @@ int main() {
                 for (int k = 1; k < j; ++k)
                     if (d[head[i]][k] != "-" && d[tail[i]][j - k] != "-") d[i][j] = min(d[i][j], d[head[i]][k] + d[tail[i]][j - k]);
             }
-            dirjstra(j);
+            Dijkstra(j);
         }
         cout << d[ID("S")][len] << endl;
     }
