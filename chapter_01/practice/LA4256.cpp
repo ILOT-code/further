@@ -6,15 +6,15 @@ using namespace std;
 
 const int INF = 0x3f3f3f3f;
 const int maxn = 300 + 5;
-int T, n, m, len, p[maxn], d[maxn][maxn];
+int T, n, M, len, p[maxn], d[maxn][maxn];
 bool link[maxn][maxn];
 
 int main() {
     scanf("%d", &T);
     while (T--) {
         memset(link, 0, sizeof(link));
-        scanf("%d%d", &n, &m);
-        for (int i = 0, u, v; i < m; ++i) {
+        scanf("%d%d", &n, &M);
+        for (int i = 0, u, v; i < M; ++i) {
             scanf("%d%d", &u, &v);
             link[u][v] = link[v][u] = 1;
         }

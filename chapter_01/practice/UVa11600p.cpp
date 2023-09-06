@@ -6,7 +6,7 @@
 using namespace std;
 
 const int maxn = 30 + 2;
-int T, kase, n, m, nn;
+int T, kase, n, M, nn;
 int fa[maxn], cnt[maxn], que[maxn];
 bool vis[maxn];
 int find(int x) { return fa[x] == x ? x : fa[x] = find(fa[x]); }
@@ -26,10 +26,10 @@ double dp(int s) {
 
 int main() {
     scanf("%d", &T);
-    while (~scanf("%d%d", &n, &m)) {
+    while (~scanf("%d%d", &n, &M)) {
         for (int i = 1; i <= n; ++i) fa[i] = i, cnt[i] = 1, vis[i] = 0;
         d.clear();
-        for (int i = 1, u, v; i <= m; ++i) {
+        for (int i = 1, u, v; i <= M; ++i) {
             scanf("%d%d", &u, &v);
             if (find(u) != find(v)) {
                 cnt[fa[u]] += cnt[fa[v]];

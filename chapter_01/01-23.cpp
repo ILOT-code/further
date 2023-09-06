@@ -7,18 +7,18 @@ using namespace std;
 #define se second
 #define PII pair<int, int>
 const int maxn = 100 + 5;
-int kase, n, m, y[maxn], on[maxn], on2[maxn], left[maxn];
+int kase, n, M, y[maxn], on[maxn], on2[maxn], left[maxn];
 PII po[maxn];
 
 int solve() {
     sort(po, po + n);
     sort(y, y + n);
-    m = unique(y, y + n) - y;
-    if (m <= 2) return n;
+    M = unique(y, y + n) - y;
+    if (M <= 2) return n;
 
     int ans = 0;
-    for (int a = 0; a < m; ++a)
-        for (int b = a + 1; b < m; ++b) {
+    for (int a = 0; a < M; ++a)
+        for (int b = a + 1; b < M; ++b) {
             int cnt = 0, last = -1;
             for (int i = 0; i < n; ++i) {
                 if (po[i].se < y[a] || po[i].se > y[b]) continue;

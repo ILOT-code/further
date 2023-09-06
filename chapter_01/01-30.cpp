@@ -7,7 +7,7 @@ using namespace std;
 
 const int maxn = 1000 + 5;
 const int M = 2000;
-int T, n, m, d[maxn][2];
+int T, n, M, d[maxn][2];
 bool vis[maxn][2];
 vector<int> g[maxn];
 
@@ -27,10 +27,10 @@ int dp(int i, int j, int f) {
 int main() {
     scanf("%d", &T);
     while (T--) {
-        scanf("%d%d", &n, &m);
+        scanf("%d%d", &n, &M);
         for (int i = 0; i < n; ++i) g[i].clear();
         memset(vis, 0, sizeof(vis));
-        for (int i = 0, a, b; i < m; ++i) {
+        for (int i = 0, a, b; i < M; ++i) {
             scanf("%d%d", &a, &b);
             g[a].push_back(b);
             g[b].push_back(a);
@@ -39,7 +39,7 @@ int main() {
         for (int i = 0; i < n; ++i)
             if (!vis[i][0] && !vis[i][1]) ans += min(dp(i, 0, -1), dp(i, 1, -1));
 
-        printf("%d %d %d\n", ans / M, m - ans % M, ans % M);
+        printf("%d %d %d\n", ans / M, M - ans % M, ans % M);
     }
     return 0;
 }

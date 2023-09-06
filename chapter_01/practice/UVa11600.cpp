@@ -6,7 +6,7 @@
 using namespace std;
 
 const int maxn = 30 + 5;
-int T, kase, n, m, cnt, vis[maxn], num[maxn];
+int T, kase, n, M, cnt, vis[maxn], num[maxn];
 map<int, double> f;
 vector<int> g[maxn];
 
@@ -36,10 +36,10 @@ double dp(int s) {
 int main() {
     scanf("%d", &T);
     while (T--) {
-        scanf("%d%d", &n, &m);
+        scanf("%d%d", &n, &M);
         for (int i = 0; i <= n; i++) g[i].clear(), vis[i] = num[i] = 0;
         f.clear();
-        for (int i = 0, u, v; i < m; i++) {
+        for (int i = 0, u, v; i < M; i++) {
             scanf("%d%d", &u, &v);
             g[u].push_back(v);
             g[v].push_back(u);

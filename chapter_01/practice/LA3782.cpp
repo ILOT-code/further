@@ -9,25 +9,25 @@ const int maxd = 50 + 5;
 const int maxm = 3000 + 5;
 const int c[10] = {6, 2, 5, 5, 4, 5, 6, 3, 7, 6};
 
-int kase, n, m;
+int kase, n, M;
 int d[maxd][maxm];
 int ans[maxd], reminder[maxd];
 void init() {
     reminder[0] = 1;
-    for (int i = 1; i <= n / 2; ++i) reminder[i] = (10 * reminder[i - 1]) % m;
+    for (int i = 1; i <= n / 2; ++i) reminder[i] = (10 * reminder[i - 1]) % M;
     memset(d, INF, sizeof(d));
     d[0][0] = 0;
 }
 
 int main() {
-    while (~scanf("%d%d", &n, &m) && n) {
+    while (~scanf("%d%d", &n, &M) && n) {
         init();
         for (int i = 0; i < (n / 2); ++i)
-            for (int j = 0; j < m; ++j)
+            for (int j = 0; j < M; ++j)
                 if (d[i][j] != INF)
                     for (int k = 0; k < 10; ++k)
                         if (d[i][j] + c[k] <= n) {
-                            int t = (10 * j + k) % m;
+                            int t = (10 * j + k) % M;
                             d[i + 1][t] = min(d[i + 1][t], c[k] + d[i][j]);
                         }
 
@@ -38,7 +38,7 @@ int main() {
         int fi = p;
         while (p)
             for (int k = 9; k >= 0; --k) {
-                int newres = (res - (k * reminder[p - 1]) % m + m) % m;
+                int newres = (res - (k * reminder[p - 1]) % M + M) % M;
                 if (d[p - 1][newres] + c[k] <= n) {
                     n -= c[k];
                     ans[p] = k, p--, res = newres;

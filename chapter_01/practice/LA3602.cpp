@@ -6,16 +6,16 @@ using namespace std;
 
 const int maxn = 1000 + 5;
 const int maxm = 50 + 5;
-int T, n, m, cnt[30];
+int T, n, M, cnt[30];
 char ans[maxn], s[maxm][maxn];
 
 int main() {
     scanf("%d", &T);
     while (T--) {
-        scanf("%d%d", &n, &m);
+        scanf("%d%d", &n, &M);
         for (int i = 0; i < n; ++i) scanf("%s", s[i]);
         int sum = 0;
-        for (int j = 0; j < m; ++j) {
+        for (int j = 0; j < M; ++j) {
             memset(cnt, 0, sizeof(cnt));
             for (int i = 0; i < n; ++i) cnt[s[i][j] - 'A']++;
             int t = 0, id = 100;
@@ -24,7 +24,7 @@ int main() {
             ans[j] = id + 'A';
             for (int i = 0; i < 26; ++i) sum += i == id ? 0 : cnt[i];
         }
-        for (int i = 0; i < m; ++i) printf("%c", ans[i]);
+        for (int i = 0; i < M; ++i) printf("%c", ans[i]);
         printf("\n%d\n", sum);
     }
     return 0;

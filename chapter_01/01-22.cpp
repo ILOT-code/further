@@ -5,15 +5,15 @@
 using namespace std;
 
 const int maxn = 1000 + 5;
-int T, m, n;
+int T, M, n;
 bool g[maxn][maxn];
 int up[maxn], left[maxn], right[maxn];
 
 int main() {
     scanf("%d", &T);
     while (T--) {
-        scanf("%d%d", &m, &n);
-        for (int i = 0; i < m; ++i)
+        scanf("%d%d", &M, &n);
+        for (int i = 0; i < M; ++i)
             for (int j = 0; j < n; ++j) {
                 char ch = getchar();
                 while (ch != 'F' && ch != 'R') ch = getchar();
@@ -21,7 +21,7 @@ int main() {
             }
 
         int ans = 0;
-        for (int i = 0; i < m; ++i) {
+        for (int i = 0; i < M; ++i) {
             int ld = -1, rd = n;
             for (int j = 0; j < n; ++j) {
                 if (g[i][j]) {

@@ -4,11 +4,11 @@
 using namespace std;
 
 const int maxn = 300 + 5;
-int n, m;
+int n, M;
 
 int main() {
-    while (~scanf("%d%d", &m, &n)) {
-        printf("%d\n", n * m - 1);
+    while (~scanf("%d%d", &M, &n)) {
+        printf("%d\n", n * M - 1);
     }
     return 0;
 }

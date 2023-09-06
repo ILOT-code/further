@@ -6,7 +6,7 @@ using namespace std;
 const int INF = 0x3f3f3f3f;
 const int maxn = 100 + 5;
 const int maxs = 8;
-int s, m, n;
+int s, M, n;
 int slary[maxn], tea[maxn], d[maxn][1 << (2 * maxs)];
 
 void change_st(int& old, int sta) {
@@ -30,9 +30,9 @@ int dp(int p, int state) {
 }
 
 int main() {
-    while (~scanf("%d%d%d", &s, &m, &n) && s) {
+    while (~scanf("%d%d%d", &s, &M, &n) && s) {
         int sum = 0, state = (1 << (2 * s)) - 1;
-        for (int i = 0; i < m; ++i) {
+        for (int i = 0; i < M; ++i) {
             char c;
             int tmptea = 0, t;
             scanf("%d%c", &t, &c);
